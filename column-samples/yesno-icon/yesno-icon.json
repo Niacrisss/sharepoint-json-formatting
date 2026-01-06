@@ -1,0 +1,9 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "span",
+  "style": {
+    "font-size": "18px",
+    "color": "=if(@currentField, '#16a34a', '#dc2626')"
+  },
+  "txtContent": "=if(@currentField, '✅', '❌')"
+}

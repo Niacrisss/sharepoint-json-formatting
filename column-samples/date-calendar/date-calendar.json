@@ -1,0 +1,86 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "style": {
+    "display": "=if(@currentField,'flex','none')",
+    "margin": "5px 0",
+    "justify-content": "center",
+    "box-shadow": "0 4px 8px rgba(0,0,0,0.2)",
+    "border-radius": "8px",
+    "overflow": "hidden"
+  },
+  "children": [
+    {
+      "elmType": "div",
+      "style": {
+        "display": "flex",
+        "flex-direction": "row",
+        "background-color": "#fff",
+        "width": "100%"
+      },
+      "children": [
+        {
+          "elmType": "div",
+          "txtContent": "=substring('JANFEBMARAPRMAYJUNJULAUGSEPOCTNOVDEC',getMonth(@currentField)*3,getMonth(@currentField)*3+3)",
+          "style": {
+            "writing-mode": "vertical-rl",
+            "text-orientation": "mixed",
+            "padding": "4px 2px",
+            "background-color": "=if(toDateString(@currentField)==toDateString(@now),'#c43b33','#0078d4')",
+            "color": "white",
+            "font-weight": "bold",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center",
+            "box-shadow": "2px 0 4px rgba(0,0,0,0.15)"
+          }
+        },
+        {
+          "elmType": "div",
+          "style": {
+            "display": "flex",
+            "flex-direction": "column",
+            "flex-grow": "1",
+            "padding": "2px 8px",
+            "justify-content": "center",
+            "background-color": "#c7edffff"
+          },
+          "children": [
+            {
+              "elmType": "div",
+              "txtContent": "=getDate(@currentField)",
+              "style": {
+                "font-size": "22px",
+                "font-weight": "bold",
+                "text-align": "center",
+                "color": "#333"
+              }
+            },
+            {
+              "elmType": "div",
+              "forEach": "weekday in split('0,1,2,3,4,5,6',',')",
+              "style": {
+                "white-space": "nowrap"
+              },
+              "attributes": {
+                "class": "ms-fontColor-themePrimary ms-fontWeight-bold"
+              },
+              "children": [
+                {
+                  "elmType": "div",
+                  "txtContent": "=if([$weekday]=='0','Saturday',if([$weekday]=='1','Sunday',if([$weekday]=='2','Monday',if([$weekday]=='3','Tuesday',if([$weekday]=='4','Wednesday',if([$weekday]=='5','Thursday',if([$weekday]=='6','Friday',''))))))",
+                  "style": {
+                    "margin-bottom": "2px",
+                    "flex-grow": 1,
+                    "width": "100%",
+                    "display": "=if((getMonth(@currentField)+1)>2,if(((getDate(@currentField)+floor(26*(getMonth(@currentField)+1+1)/10)+Number(substring(toString(getYear(@currentField)),2,4))+floor(Number(substring(toString(getYear(@currentField)),2,4))/4)+floor(Number(substring(toString(getYear(@currentField)),0,2))/4)-2*Number(substring(toString(getYear(@currentField)),0,2)))%7)==Number([$weekday]),'','none'),if(((getDate(@currentField)+floor(26*(getMonth(@currentField)+1+12+1)/10)+Number(substring(toString(getYear(@currentField)-1),2,4))+floor(Number(substring(toString(getYear(@currentField)-1),2,4))/4)+floor(Number(substring(toString(getYear(@currentField)-1),0,2))/4)-2*Number(substring(toString(getYear(@currentField)-1),0,2)))%7)==Number([$weekday]),'','none')"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

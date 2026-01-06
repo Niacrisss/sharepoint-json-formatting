@@ -1,0 +1,90 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "children": [
+    {
+      "elmType": "div",
+      "style": {
+        "display": "flex"
+      },
+      "children": [
+        {
+          "elmType": "div",
+          "style": {
+            "border-top-left-radius": "12px",
+            "border-bottom-left-radius": "12px",
+            "cursor": "pointer",
+            "padding": "5px 0px",
+            "text-align": "center",
+            "width": "70px",
+            "background-color": "=if(@currentField,'#16a34a','transparent')",
+            "border-left": "2px solid #15803d",
+            "border-top": "2px solid #15803d",
+            "border-bottom": "2px solid #15803d",
+            "color": "=if(@currentField,'white','#16a34a')"
+          },
+          "attributes": {
+            "class": "ms-fontColor-white ms-fontWeight-bold"
+          },
+          "txtContent": "✅",
+          "customRowAction": {
+            "action": "setValue",
+            "actionInput": {
+              "Achievement": "=if(@currentField , '0' , '1' )"
+            }
+          }
+        },
+        {
+          "elmType": "div",
+          "style": {
+            "cursor": "pointer",
+            "border-top": "2px solid #15803d",
+            "border-bottom": "2px solid #15803d"
+          },
+          "children": [
+            {
+              "elmType": "div",
+              "style": {
+                "height": "30px",
+                "width": "10px",
+                "background-color": "=if(@currentField , '#16a34a', '#dc2626')",
+                "border-left": "=if(@currentField ,'','2px solid #15803d')",
+                "border-right": "=if(@currentField,'2px solid #dc2626','')",
+                "border-top-left-radius": "=if(@currentField,'','30px')",
+                "border-bottom-left-radius": "=if(@currentField,'','30px')",
+                "border-top-right-radius": "=if(@currentField,'30px','')",
+                "border-bottom-right-radius": "=if(@currentField,'30px','')"
+              }
+            }
+          ]
+        },
+        {
+          "elmType": "div",
+          "style": {
+            "border-top-right-radius": "12px",
+            "border-bottom-right-radius": "12px",
+            "border-right": "2px solid #b91c1c",
+            "cursor": "pointer",
+            "padding": "5px 0px",
+            "width": "70px",
+            "text-align": "center",
+            "background-color": "=if(@currentField,'transparent', '#dc2626')",
+            "color": "=if(@currentField,'#dc2626','white')",
+            "border-top": "2px solid #b91c1c",
+            "border-bottom": "2px solid #b91c1c"
+          },
+          "attributes": {
+            "class": "ms-fontWeight-bold"
+          },
+          "txtContent": "=if(@currentField , '❗' , '❕' )",
+          "customRowAction": {
+            "action": "setValue",
+            "actionInput": {
+              "Achievement": "=if(@currentField , '0' , '1' )"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

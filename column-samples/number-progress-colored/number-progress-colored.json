@@ -1,0 +1,33 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "style": {
+    "width": "100%",
+    "height": "20px",
+    "background-color": "#f0f0f0",
+    "border-radius": "5px",
+    "position": "relative"
+  },
+  "children": [
+    {
+      "elmType": "div",
+      "style": {
+        "height": "100%",
+        "width": "=@currentField + '%'",
+        "background-color": "=if(@currentField <= 30, '#e74c3c', if(@currentField <= 70, '#f1c40f', '#2ecc71'))",
+        "border-radius": "5px"
+      }
+    },
+    {
+      "elmType": "span",
+      "txtContent": "=@currentField + '%'",
+      "style": {
+        "position": "absolute",
+        "width": "100%",
+        "text-align": "center",
+        "font-weight": "bold",
+        "color": "#000"
+      }
+    }
+  ]
+}

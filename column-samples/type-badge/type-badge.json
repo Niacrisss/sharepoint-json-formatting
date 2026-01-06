@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "style": {
+    "display": "flex",
+    "align-items": "center",
+    "gap": "6px"
+  },
+  "children": [
+    {
+      "elmType": "span",
+      "attributes": {
+        "iconName": "=if(endsWith([$FileLeafRef], '.pdf'), 'PDF', if(endsWith([$FileLeafRef], '.docx'), 'WordDocument', if(endsWith([$FileLeafRef], '.xlsx'), 'ExcelDocument', if(endsWith([$FileLeafRef], '.pptx'), 'PowerPointDocument', if(endsWith([$FileLeafRef], '.jpg') || endsWith([$FileLeafRef], '.png') || endsWith([$FileLeafRef], '.gif'), 'Picture', 'Page')))))",
+        "title": "=if(endsWith([$FileLeafRef], '.pdf'), 'PDF File', if(endsWith([$FileLeafRef], '.docx'), 'Word Document', if(endsWith([$FileLeafRef], '.xlsx'), 'Excel Spreadsheet', if(endsWith([$FileLeafRef], '.pptx'), 'PowerPoint Presentation', if(endsWith([$FileLeafRef], '.jpg') || endsWith([$FileLeafRef], '.png') || endsWith([$FileLeafRef], '.gif'), 'Image File', 'Other File')))))"
+      },
+      "style": {
+        "font-size": "22px",
+        "color": "=if(endsWith([$FileLeafRef], '.pdf'), '#d9534f', if(endsWith([$FileLeafRef], '.docx'), '#2b5797', if(endsWith([$FileLeafRef], '.xlsx'), '#217346', if(endsWith([$FileLeafRef], '.pptx'), '#d46a00', if(endsWith([$FileLeafRef], '.jpg') || endsWith([$FileLeafRef], '.png') || endsWith([$FileLeafRef], '.gif'), '#f0ad4e', '#6c757d')))))"
+      }
+    },
+    {
+      "elmType": "span",
+      "txtContent": "=substring([$FileLeafRef], 0, indexOf([$FileLeafRef], '.'))",
+      "style": {
+        "background-color": "=if(endsWith([$FileLeafRef], '.pdf'), '#f8d7da', if(endsWith([$FileLeafRef], '.docx'), '#dbe5f7', if(endsWith([$FileLeafRef], '.xlsx'), '#d4edda', if(endsWith([$FileLeafRef], '.pptx'), '#fff3cd', if(endsWith([$FileLeafRef], '.jpg') || endsWith([$FileLeafRef], '.png') || endsWith([$FileLeafRef], '.gif'), '#fff0d6', '#e1e1e1')))))",
+        "color": "=if(endsWith([$FileLeafRef], '.pdf'), '#d9534f', if(endsWith([$FileLeafRef], '.docx'), '#2b5797', if(endsWith([$FileLeafRef], '.xlsx'), '#217346', if(endsWith([$FileLeafRef], '.pptx'), '#d46a00', if(endsWith([$FileLeafRef], '.jpg') || endsWith([$FileLeafRef], '.png') || endsWith([$FileLeafRef], '.gif'), '#f0ad4e', '#333')))))",
+        "padding": "2px 8px",
+        "border-radius": "12px",
+        "font-size": "14px",
+        "font-weight": "600",
+        "white-space": "nowrap",
+        "overflow": "hidden",
+        "text-overflow": "ellipsis"
+      }
+    }
+  ]
+}

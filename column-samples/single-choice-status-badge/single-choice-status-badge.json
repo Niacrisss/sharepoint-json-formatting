@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "style": {
+    "display": "inline-flex",
+    "align-items": "center",
+    "padding": "4px 10px",
+    "border-radius": "16px",
+    "background-color": "=if(@currentField == 'Completed', '#d1fae5', if(@currentField == 'In Progress', '#fef3c7', '#fee2e2'))",
+    "color": "=if(@currentField == 'Completed', '#065f46', if(@currentField == 'In Progress', '#92400e', '#991b1b'))",
+    "box-shadow": "0 2px 6px rgba(0,0,0,0.15)"
+  },
+  "children": [
+    {
+      "elmType": "span",
+      "style": {
+        "margin-right": "6px"
+      },
+      "txtContent": "=if(@currentField == 'Completed', '✅', if(@currentField == 'In Progress', '⏳', '❌'))"
+    },
+    {
+      "elmType": "span",
+      "txtContent": "@currentField"
+    }
+  ]
+}

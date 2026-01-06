@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "style": {
+    "padding": "4px 8px",
+    "border-radius": "6px",
+    "display": "flex",
+    "flex-direction": "column",
+    "justify-content": "center",
+    "background-color": "=if(@currentField < @now && [$Status] != 'Completed', '#fff7ed', '')"
+  },
+  "children": [
+    {
+      "elmType": "div",
+      "style": {
+        "font-size": "12px",
+        "font-weight": "600",
+        "color": "#9a3412"
+      },
+      "txtContent": "=if(@currentField < @now && [$Status] != 'Completed', '⚠ Overdue', '')"
+    },
+    {
+      "elmType": "div",
+      "style": {
+        "font-weight": "=if(@currentField < @now && [$Status] != 'Completed', '600', '400')",
+        "color": "=if(@currentField < @now && [$Status] != 'Completed', '#9a3412', '')"
+      },
+      "txtContent": "=toLocaleDateString(@currentField)"
+    }
+  ]
+}

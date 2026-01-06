@@ -1,0 +1,42 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "button",
+  "attributes": {
+    "class": "ms-fontColor-white",
+    "title": "Share this item"
+  },
+  "style": {
+    "background-color": "#0078D4",
+    "border": "none",
+    "border-radius": "6px",
+    "padding": "6px 12px",
+    "cursor": "pointer",
+    "display": "flex",
+    "align-items": "center",
+    "gap": "6px",
+    "box-shadow": "2px 2px 4px rgba(0,0,0,0.2)"
+  },
+  "children": [
+    {
+      "elmType": "span",
+      "attributes": {
+        "iconName": "Share"
+      },
+      "style": {
+        "font-size": "16px",
+        "color": "white"
+      }
+    },
+    {
+      "elmType": "span",
+      "txtContent": "Share",
+      "style": {
+        "font-weight": "600",
+        "color": "white"
+      }
+    }
+  ],
+  "customRowAction": {
+    "action": "share"
+  }
+}

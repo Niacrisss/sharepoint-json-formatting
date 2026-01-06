@@ -1,0 +1,115 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "style": {
+    "width": "84px",
+    "height": "84px",
+    "display": "flex",
+    "flex-direction": "row",
+    "flex-wrap": "wrap"
+  },
+  "children": [
+    {
+      "elmType": "div",
+      "style": {
+        "display": "flex"
+      },
+      "children": [
+        {
+          "elmType": "button",
+          "txtContent": "Open",
+          "style": {
+            "background-color": "#f25022",
+            "border": "none",
+            "width": "40px",
+            "height": "40px",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center",
+            "color": "white",
+            "font-weight": "600",
+            "font-size": "10px",
+            "cursor": "pointer",
+            "border-top-left-radius": "12px",
+            "margin": "2px"
+          },
+          "customRowAction": {
+            "action": "defaultClick"
+          }
+        },
+        {
+          "elmType": "button",
+          "txtContent": "Delete",
+          "style": {
+            "background-color": "#7fba00",
+            "border": "none",
+            "width": "40px",
+            "height": "40px",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center",
+            "color": "white",
+            "font-weight": "600",
+            "font-size": "10px",
+            "cursor": "pointer",
+            "margin": "2px"
+          },
+          "customRowAction": {
+            "action": "delete"
+          }
+        }
+      ]
+    },
+    {
+      "elmType": "div",
+      "style": {
+        "display": "flex"
+      },
+      "children": [
+        {
+          "elmType": "button",
+          "txtContent": "Edit",
+          "style": {
+            "background-color": "#00a4ef",
+            "border": "none",
+            "width": "40px",
+            "height": "40px",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center",
+            "color": "white",
+            "font-weight": "600",
+            "font-size": "10px",
+            "cursor": "pointer",
+            "margin": "2px"
+          },
+          "customRowAction": {
+            "action": "editProps"
+          }
+        },
+        {
+          "elmType": "button",
+          "txtContent": "Share",
+          "style": {
+            "background-color": "#ffb900",
+            "border": "none",
+            "width": "40px",
+            "height": "40px",
+            "display": "flex",
+            "align-items": "center",
+            "justify-content": "center",
+            "color": "white",
+            "font-weight": "600",
+            "font-size": "10px",
+            "cursor": "pointer",
+            "border-bottom-right-radius": "12px",
+            "margin": "2px"
+          },
+          "customRowAction": {
+            "action": "share"
+          }
+        }
+      ]
+    }
+  ]
+}

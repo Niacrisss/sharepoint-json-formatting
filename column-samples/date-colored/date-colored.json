@@ -1,0 +1,15 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "style": {
+    "padding": "4px",
+    "font-weight": "600",
+    "color": "=if(Date(@currentField) > @now, '#dc3545', if(Date(@currentField) >= (@now - 604800000), '#ff7f07ff', '#28a745'))"
+  },
+  "children": [
+    {
+      "elmType": "span",
+      "txtContent": "@currentField"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "style": {
+    "padding": "4px 8px",
+    "border-radius": "6px",
+    "font-weight": "=if(@currentField == 'High' && @me == [$AssignedTo.email], '600', '400')",
+    "background-color": "=if(@currentField == 'High' && @me == [$AssignedTo.email], '#fee2e2', '')",
+    "color": "=if(@currentField == 'High' && @me == [$AssignedTo.email], '#991b1b', '')"
+  },
+  "children": [
+    {
+      "elmType": "span",
+      "txtContent": "=if(@currentField == 'High' && @me == [$AssignedTo.email], '🔥 High', @currentField)"
+    }
+  ]
+}

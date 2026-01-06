@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "style": {
+    "display": "flex",
+    "align-items": "center",
+    "padding": "4px 12px",
+    "border-radius": "8px",
+    "font-weight": "bold",
+    "color": "#ffffff",
+    "min-width": "140px",
+    "border": "1px solid #bdc3c7",
+    "box-shadow": "1px 2px 4px rgba(0,0,0,0.2)",
+    "background-color": "=if(@currentField == 'High', '#e74c3c', if(@currentField == 'Medium', '#f39c12', '#2ecc71'))"
+  },
+  "children": [
+    {
+      "elmType": "div",
+      "style": {
+        "width": "28px",
+        "height": "28px",
+        "border-radius": "50%",
+        "background-color": "#ffffff",
+        "display": "flex",
+        "justify-content": "center",
+        "align-items": "center",
+        "margin-right": "10px",
+        "font-size": "18px",
+        "color": "=if(@currentField == 'High','#e74c3c', if(@currentField == 'Medium','#f39c12','#2ecc71'))"
+      },
+      "txtContent": "=if(@currentField == 'High','⚠️',if(@currentField == 'Medium','⚡','✅'))"
+    },
+    {
+      "elmType": "span",
+      "txtContent": "@currentField"
+    }
+  ]
+}

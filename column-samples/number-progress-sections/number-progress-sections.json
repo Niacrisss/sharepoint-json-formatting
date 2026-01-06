@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "style": {
+    "width": "100%",
+    "height": "30px",
+    "background-color": "#ecf0f1",
+    "border-radius": "5px",
+    "display": "flex"
+  },
+  "children": [
+    {
+      "elmType": "div",
+      "style": {
+        "flex": "1",
+        "height": "100%",
+        "background-color": "=if(@currentField >= 25, '#e74c3c', '#ffffff')",
+        "border-right": "1px solid #bdc3c7",
+        "display": "flex",
+        "justify-content": "center",
+        "align-items": "center",
+        "font-size": "18px",
+        "color": "=if(@currentField >= 25, '#ffffff', '#7f8c8d')"
+      },
+      "txtContent": "=if(@currentField >= 25, '✔️', '○')"
+    },
+    {
+      "elmType": "div",
+      "style": {
+        "flex": "1",
+        "height": "100%",
+        "background-color": "=if(@currentField >= 50, '#f39c12', '#ffffff')",
+        "border-right": "1px solid #bdc3c7",
+        "display": "flex",
+        "justify-content": "center",
+        "align-items": "center",
+        "font-size": "18px",
+        "color": "=if(@currentField >= 50, '#ffffff', '#7f8c8d')"
+      },
+      "txtContent": "=if(@currentField >= 50, '✔️', '○')"
+    },
+    {
+      "elmType": "div",
+      "style": {
+        "flex": "1",
+        "height": "100%",
+        "background-color": "=if(@currentField >= 75, '#f1c40f', '#ffffff')",
+        "border-right": "1px solid #bdc3c7",
+        "display": "flex",
+        "justify-content": "center",
+        "align-items": "center",
+        "font-size": "18px",
+        "color": "=if(@currentField >= 75, '#ffffff', '#7f8c8d')"
+      },
+      "txtContent": "=if(@currentField >= 75, '✔️', '○')"
+    },
+    {
+      "elmType": "div",
+      "style": {
+        "flex": "1",
+        "height": "100%",
+        "background-color": "=if(@currentField >= 100, '#2ecc71', '#ffffff')",
+        "display": "flex",
+        "justify-content": "center",
+        "align-items": "center",
+        "font-size": "18px",
+        "color": "=if(@currentField >= 100, '#ffffff', '#7f8c8d')"
+      },
+      "txtContent": "=if(@currentField >= 100, '✔️', '○')"
+    }
+  ]
+}

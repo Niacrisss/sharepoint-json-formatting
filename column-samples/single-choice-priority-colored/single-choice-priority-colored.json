@@ -1,0 +1,9 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "txtContent": "@currentField",
+  "style": {
+    "color": "=if(@currentField == 'High', '#e74c3c', if(@currentField == 'Medium', '#f39c12', '#2ecc71'))",
+    "font-weight": "bold"
+  }
+}

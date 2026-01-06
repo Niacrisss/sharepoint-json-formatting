@@ -1,0 +1,41 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "style": {
+    "width": "100%",
+    "height": "30px",
+    "background-color": "white",
+    "border-radius": "5px",
+    "position": "relative"
+  },
+  "children": [
+    {
+      "elmType": "div",
+      "style": {
+        "height": "100%",
+        "width": "=@currentField + '%'",
+        "background-color": "#3498db",
+        "border-radius": "5px",
+        "transition": "width 0.5s ease-in-out"
+      }
+    },
+    {
+      "elmType": "span",
+      "txtContent": "=if(@currentField == 100, '🎉', if(@currentField >= 61, '🏃', if(@currentField >= 21, '🚶','🐢'))) + ' ' + @currentField + '%'",
+      "style": {
+        "position": "absolute",
+        "left": "50%",
+        "top": "50%",
+        "transform": "translate(-50%, -50%)",
+        "font-weight": "bold",
+        "font-size": "22px",
+        "padding": "2px 6px",
+        "border-radius": "6px",
+        "background-color": "#ecf0f1",
+        "border": "1px solid #bdc3c7",
+        "color": "=if(@currentField <= 30, '#e74c3c', if(@currentField <= 70, '#f1c40f', '#2ecc71'))",
+        "text-align": "center"
+      }
+    }
+  ]
+}

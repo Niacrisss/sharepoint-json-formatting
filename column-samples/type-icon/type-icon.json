@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+  "elmType": "div",
+  "children": [
+    {
+      "elmType": "span",
+      "attributes": {
+        "iconName": "=if(endsWith([$FileLeafRef], '.pdf'), 'PDF', if(endsWith([$FileLeafRef], '.docx'), 'WordDocument', if(endsWith([$FileLeafRef], '.xlsx'), 'ExcelDocument', 'TextDocument')))"
+      },
+      "style": {
+        "margin-right": "6px",
+        "color": "=if(endsWith([$FileLeafRef], '.pdf'), '#d9534f', if(endsWith([$FileLeafRef], '.docx'), '#2b5797', if(endsWith([$FileLeafRef], '.xlsx'), '#217346', '#6c757d')))",
+        "font-size": "24px"
+      }
+    }
+  ]
+}
