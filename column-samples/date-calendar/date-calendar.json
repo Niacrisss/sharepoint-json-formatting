@@ -43,7 +43,7 @@
             "flex-grow": "1",
             "padding": "2px 8px",
             "justify-content": "center",
-            "background-color": "#c7edffff"
+            "background-color": "#c7edff"
           },
           "children": [
             {
